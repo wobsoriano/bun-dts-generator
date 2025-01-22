@@ -49,7 +49,7 @@ const dts = (options?: Options): import('bun').BunPlugin => {
 			await Promise.all(
 				entrypoints.map((entry, index) => {
 					const relativePath = path.relative(commonPrefix, entry);
-					const dtsFile = relativePath.replace(/\.[jtm]s$/, '.d.ts');
+					const dtsFile = relativePath.replace(/\.[mc]?[jt]sx?$/, '.d.ts');
 					const outFile = path.join(outDir, dtsFile);
 					const outFileDir = path.dirname(outFile);
 
